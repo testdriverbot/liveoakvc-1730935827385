@@ -1,0 +1,20 @@
+version: 4.0.81
+steps:
+  - prompt: Click on "Resources" in the header menu.
+    commands:
+      - command: hover-text
+        text: Resources
+        description: link in the header
+        action: click
+  - prompt: Access different resources, such as articles or guides.
+    commands:
+      - command: hover-text
+        text: News & Insights
+        description: option under Resources menu
+        action: click
+  - prompt: >-
+      Assert that the resources load correctly and are readable.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: News & Insights page is displaying articles
