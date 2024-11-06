@@ -1,0 +1,14 @@
+version: 4.0.81
+steps:
+  - prompt: Click on "Investment Strategy".
+    commands:
+      - command: hover-text
+        text: Investment Strategy
+        description: button to view investment strategy
+        action: click
+  - prompt: >-
+      Assert that the investment strategy page or modal appears.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the page contains "Where We Invest"
