@@ -1,0 +1,20 @@
+version: 4.0.81
+steps:
+  - prompt: Click on "Founders" in the header menu.
+    commands:
+      - command: hover-text
+        text: Founders
+        description: link in the header menu
+        action: click
+  - prompt: Assert that the Founders page is accessible.
+    commands:
+      - command: assert
+        expect: >-
+          the text "Meet the visionary founders putting Texas on the global map"
+          is visible
+  - prompt: >-
+      Verify that stories or profiles of different founders are visible.  # Use
+      the content of the file from the environment
+    commands:
+      - command: assert
+        expect: images of different founders are visible on the page
