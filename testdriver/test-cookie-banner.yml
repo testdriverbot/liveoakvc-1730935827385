@@ -1,0 +1,30 @@
+version: 4.0.81
+steps:
+  - prompt: If a cookie banner appears on the webpage, click to accept or close it.
+    commands:
+      - command: hover-text
+        text: Accept
+        description: button to accept cookies
+        action: click
+  - prompt: If a cookie banner appears on the webpage, click to accept or close it.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll-until-text
+        text: Accept Cookies
+        direction: down
+      - command: hover-text
+        text: Accept Cookies
+        description: button to accept cookies
+        action: click
+  - prompt: If a cookie banner appears on the webpage, click to accept or close it.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll-until-text
+        text: Close
+        direction: down
+      - command: hover-text
+        text: Close
+        description: button to close cookies banner
+        action: click
