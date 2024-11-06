@@ -1,0 +1,18 @@
+version: 4.0.81
+steps:
+  - prompt: Click on "Team" in the header menu.
+    commands:
+      - command: hover-text
+        text: Team
+        description: link in the header
+        action: click
+  - prompt: Assert that the Team page appears.
+    commands:
+      - command: assert
+        expect: the text "Our Team" is visible on the page
+  - prompt: >-
+      Verify the presence of individual team member profiles.  # Use the content
+      of the file from the environment
+    commands:
+      - command: assert
+        expect: the text "Venu Shamapant" is visible on the page
