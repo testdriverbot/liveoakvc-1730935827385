@@ -1,0 +1,26 @@
+version: 4.0.81
+steps:
+  - prompt: Click on "Portfolio" in the header menu.
+    commands:
+      - command: hover-text
+        text: Portfolio
+        description: Portfolio link in the header menu
+        action: click
+  - prompt: Assert that the Portfolio page or section displays.
+    commands:
+      - command: assert
+        expect: Locally Grown. Globally Known. is visible on the Portfolio page
+  - prompt: Interact with a portfolio item or case study.
+    commands:
+      - command: hover-text
+        text: amplifAI
+        description: portfolio item in the list
+        action: click
+  - prompt: >-
+      Assert you can view detailed information.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: >-
+          AI-powered performance improvement platform is visible on the detailed
+          page
