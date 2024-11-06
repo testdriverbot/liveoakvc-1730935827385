@@ -1,0 +1,51 @@
+version: 4.0.81
+steps:
+  - prompt: Click on the "Contact" link in the header or footer.
+    commands:
+      - command: hover-text
+        text: Contact
+        description: link in the header
+        action: click
+  - prompt: Click on the "Contact" link in the header or footer.
+    commands:
+      - command: scroll-until-text
+        text: Contact
+        direction: down
+      - command: hover-text
+        text: Contact
+        description: link in the footer
+        action: click
+  - prompt: Assert that a contact form or contact information is displayed.
+    commands:
+      - command: assert
+        expect: contact information is displayed
+  - prompt: Interact with the form, such as entering test data.
+    commands:
+      - command: scroll
+        direction: down
+      - command: type
+        text: Test Name
+  - prompt: Interact with the form, such as entering test data.
+    commands:
+      - command: hover-text
+        text: Start
+        description: button to start the contact form
+        action: click
+      - command: type
+        text: John Doe
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: johndoe@example.com
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: This is a test message.
+  - prompt: >-
+      Assert that a success message or confirmation is shown upon submission.  #
+      Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: success message is displayed
